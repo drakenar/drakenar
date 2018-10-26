@@ -1,0 +1,45 @@
+.accordion-header {
+    background-color: #FF5723 !important;
+}
+
+.navbar {
+    background-color: #FF5723 !important;
+}
+
+.title{
+    color: #FAFAFA !important;
+}
+
+.accordion-header p {
+    color: #FAFAFA !important;
+    font-weight: bold;
+}
+
+.navbar-end {
+    margin-right: 100px;
+}
+
+.navbar-link.is-active, .navbar-link:hover, a.navbar-item.is-active, a.navbar-item:hover {
+    background-color: #C8C8C8;
+    color: #3273dc;
+}
+
+.navbar-brand, .navbar-tabs {
+    min-height: 5rem !important;
+}
+
+.navbar-item img {
+    max-height: 7rem !important;
+}
+
+.accordion-body {
+    text-align: center;
+}
+
+.accordion-content {
+    margin: 0 auto;
+}
+
+.navbar-menu.is-active {
+    background-color: #C8C8C8;
+}
