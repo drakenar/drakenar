@@ -2,114 +2,131 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
-        <link rel="stylesheet" href="node_modules/bulma-extensions/bulma-accordion/dist/css/bulma-accordion.min.css">
         <link rel="stylesheet" href="style.css">
-        <script type="text/javascript" src="node_modules/bulma-extensions/bulma-accordion/dist/js/bulma-accordion.min.js"></script>
         <script type="text/javascript" src="script.js"></script>
     </head>
     <body class="layout-default">
         <div class="section">
             <div class="container">
                 <div class="columns">
+                    <div class="column is-vcentered" style="display: inline; margin: 0;">
+                        <img src="pfs.png" alt="" height="50%" width="50%">
+                    </div>
                     <div class="column">
-                        <div class="field">
-                            <label class="label">Nombre completo</label>
-                            <div class="control">
-                                <input class="input" type="text" placeholder="">
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label">Empresa u organizaci&#243;n</label>
-                            <div class="control">
-                                <input class="input" type="text" placeholder="">
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label">Ciudad</label>
-                            <div class="control">
-                                <input class="input" type="text" placeholder="">
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label">Tel&#233;fono fijo</label>
-                            <div class="control">
-                                <input class="input" type="number" placeholder="">
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label">N&#250;mero celular</label>
-                            <div class="control">
-                                <input class="input" type="number" placeholder="">
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <label class="label">Correo electr&#243;nico</label>
-                            <div class="control has-icons-left has-icons-right">
-                                <input class="input" type="email" placeholder="" value="">
-                                <span class="icon is-small is-left">
-                                    <i class="fas fa-envelope"></i>
-                                </span>
-                                <span class="icon is-small is-right">
-                                    <i class="fas fa-exclamation-triangle"></i>
-                                </span>
-                            </div>
-                            <!--<p class="help is-danger">This email is invalid</p>-->
-                        </div>
-
-                        <!--<div class="field">
-                            <label class="label">Subject</label>
-                            <div class="control">
-                                <div class="select">
-                                    <select>
-                                        <option>Select dropdown</option>
-                                        <option>With options</option>
-                                    </select>
+                        <form id="pfsform" action="" method="post">
+                            <div class="field">
+                                <label class="label">Nombre completo<label class="has-text-danger">*</label></label>
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="" required>
                                 </div>
                             </div>
-                        </div>-->
 
-                        <div class="field">
-                            <label class="label">Mensaje</label>
-                            <div class="control">
-                                <textarea class="textarea" placeholder=""></textarea>
+                            <div class="field">
+                                <label class="label">Empresa u organizaci&#243;n<label class="has-text-danger">*</label></label>
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="" required>
+                                </div>
                             </div>
-                        </div>
 
-                        <!--<div class="field">
-                            <div class="control">
-                                <label class="checkbox">
-                                    <input type="checkbox">
-                                    I agree to the <a href="#">terms and conditions</a>
-                                </label>
+                            <div class="field">
+                                <label class="label">Ocupaci&#243;n<label class="has-text-danger">*</label></label>
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="" required>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="field">
-                            <div class="control">
-                                <label class="radio">
-                                    <input type="radio" name="question">
-                                    Yes
-                                </label>
-                                <label class="radio">
-                                    <input type="radio" name="question">
-                                    No
-                                </label>
+                            <div class="field">
+                                <label class="label">Ciudad<label class="has-text-danger">*</label></label>
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="" required>
+                                </div>
                             </div>
-                        </div>-->
 
-                        <div class="field is-grouped">
-                            <div class="control">
-                                <button class="button is-link">Enviar</button>
+                            <div class="field">
+                                <label class="label">Tel&#233;fono fijo</label>
+                                <div class="control">
+                                    <input class="input" type="tel" placeholder="">
+                                </div>
                             </div>
-                            <div class="control">
-                                <button class="button is-text">Cancelar</button>
+
+                            <div class="field">
+                                <label class="label">N&#250;mero celular<label class="has-text-danger">*</label></label>
+                                <div class="control">
+                                    <input class="input" type="tel" placeholder="" required>
+                                </div>
                             </div>
-                        </div>
+
+                            <div class="field">
+                                <label class="label">Correo electr&#243;nico<label class="has-text-danger">*</label></label>
+                                <div class="control">
+                                    <input class="input" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="email" placeholder="" value="" required>
+                                </div>
+                                <!--<p class="help is-danger">This email is invalid</p>-->
+                            </div>
+
+                            <!--<div class="field">
+                                <label class="label">Subject</label>
+                                <div class="control">
+                                    <div class="select">
+                                        <select>
+                                            <option>Select dropdown</option>
+                                            <option>With options</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <div class="field">
+                                <label class="label">Tiene visa americana<label class="has-text-danger">*</label></label>
+                                <div class="control">
+                                    <label class="radio">
+                                        <input type="radio" name="answer" required>
+                                        Si
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" name="answer">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Mensaje</label>
+                                <div class="control">
+                                    <textarea class="textarea" placeholder=""></textarea>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="control">
+                                    <label class="checkbox">
+                                        <input type="checkbox" required>
+                                        Acepto los <a href="https://pfsrealty.com/politicas-de-privacidad/" target="_blank">terminos y condiciones</a>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- <div class="field">
+                                <div class="control">
+                                    <label class="radio">
+                                        <input type="radio" name="question">
+                                        Yes
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" name="question">
+                                        No
+                                    </label>
+                                </div>
+                            </div>-->
+
+                            <div class="field is-grouped">
+                                <div class="control">
+                                    <button id="send" class="button is-link">Enviar</button>
+                                </div>
+                                <div class="control">
+                                    <button class="button is-text">Cancelar</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
