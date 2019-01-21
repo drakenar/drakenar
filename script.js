@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded',() => {
     let send = document.getElementById('send');
     let inputs = document.getElementsByTagName('input');
 
-    form.addEventListener('submit', () => {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        return false;
         console.log(form.elements);
 
         for (let input in inputs) {
@@ -27,11 +29,12 @@ document.addEventListener('DOMContentLoaded',() => {
 
         xhr.addEventListener("readystatechange", () => {
             if (this.readyState === 4) {
-            console.log(this.responseText);
+                console.log(this.responseText);
             }
         });
 
-        xhr.open("GET", "http://bdb9146b.ngrok.io/pfsservice?test=abc");
+        xhr.open("GET", "https://cardseed.com/api/countries");
+        //xhr.open("GET", "http://b1dd9be5.ngrok.io/pfsservice?test=abc");
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.setRequestHeader("cache-control", "no-cache");
         xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
@@ -39,15 +42,31 @@ document.addEventListener('DOMContentLoaded',() => {
         xhr.send();
     });
 
-    /*send.addEventListener('click', () => {
+    send.addEventListener('click', () => {
         console.log(form.elements);
 
-        Array.from(form.elements).forEach((a, b) => {
+        let xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", () => {
+            if (this.readyState === 4) {
+                console.log(this.responseText);
+            }
+        });
+
+        //xhr.open("GET", "https://cardseed.com/api/countries");
+        xhr.open("GET", "http://b1dd9be5.ngrok.io/pfsservice?test=abc");
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.setRequestHeader("cache-control", "no-cache");
+        xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+
+        xhr.send();
+        /*Array.from(form.elements).forEach((a, b) => {
             console.log(b.value);
         });
-        /*for (let input in inputs) {
+        for (let input in inputs) {
             console.log(input);
-        }
-    });*/
+        }*/
+    });
 
 });
