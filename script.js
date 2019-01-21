@@ -55,9 +55,11 @@ document.addEventListener('DOMContentLoaded',() => {
         });
 
         //xhr.open("GET", "https://cardseed.com/api/countries");
-        xhr.open("GET", "http://b1dd9be5.ngrok.io/pfsservice?test=abc");
+        xhr.open("GET", "http://ad4dd612.ngrok.io/pfsservice?test=abc");
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.setRequestHeader("cache-control", "no-cache");
+        /*xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://localhost:80');
+        xhr.setRequestHeader('Access-Control-Allow-Credentials', 'true');*/
         xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
 
         xhr.send();
