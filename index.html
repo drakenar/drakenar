@@ -1,6 +1,7 @@
 
 -<html>
     <head>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Access-Control-Allow-Origin" content="*">
         <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
@@ -19,49 +20,49 @@
                             <div class="field">
                                 <label class="label">Nombre completo<label class="has-text-danger">*</label></label>
                                 <div class="control">
-                                    <input class="input" type="text" placeholder="" required>
+                                    <input class="input" type="text" placeholder="" name="nombre" required>
                                 </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Empresa u organizaci&#243;n<label class="has-text-danger">*</label></label>
                                 <div class="control">
-                                    <input class="input" type="text" placeholder="" required>
+                                    <input class="input" type="text" name="empresa" placeholder="" required>
                                 </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Ocupaci&#243;n<label class="has-text-danger">*</label></label>
                                 <div class="control">
-                                    <input class="input" type="text" placeholder="" required>
+                                    <input class="input" type="text" placeholder="" name="ocupacion" required>
                                 </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Ciudad<label class="has-text-danger">*</label></label>
                                 <div class="control">
-                                    <input class="input" type="text" placeholder="" required>
+                                    <input class="input" type="text" placeholder="" name="ciudad" required>
                                 </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Tel&#233;fono fijo</label>
                                 <div class="control">
-                                    <input class="input" type="number" min="0" placeholder="">
+                                    <input class="input" type="number" min="0" placeholder="" name="telefono">
                                 </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">N&#250;mero celular<label class="has-text-danger">*</label></label>
                                 <div class="control">
-                                    <input class="input" type="number" min="0" placeholder="" required>
+                                    <input class="input" type="number" min="0" placeholder="" name="celular" required>
                                 </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Correo electr&#243;nico<label class="has-text-danger">*</label></label>
                                 <div class="control">
-                                    <input class="input" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="email" placeholder="" value="" required>
+                                    <input class="input" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="email" placeholder="" value="" name="correo" required>
                                 </div>
                                 <!--<p class="help is-danger">This email is invalid</p>-->
                             </div>
@@ -82,15 +83,15 @@
                                 <label class="label">&#191;Tiene planes de viajar a Miami?<label class="has-text-danger">*</label></label>
                                 <div class="control">
                                     <label class="radio">
-                                        <input type="radio" name="answer" required>
+                                        <input type="radio" name="viaje" value="3 meses" required>
                                         En tres meses
                                     </label>
                                     <label class="radio">
-                                        <input type="radio" name="answer">
+                                        <input type="radio" name="viaje" value="6 meses">
                                         En seis meses
                                     </label>
                                     <label class="radio">
-                                        <input type="radio" name="answer">
+                                        <input type="radio" name="viaje" value="1 anio">
                                         En un a&ntilde;o
                                     </label>
                                 </div>
@@ -99,14 +100,14 @@
                             <div class="field">
                                 <label class="label">Mensaje</label>
                                 <div class="control">
-                                    <textarea class="textarea" placeholder=""></textarea>
+                                    <textarea class="textarea" placeholder="" name="mensaje"></textarea>
                                 </div>
                             </div>
 
                             <div class="field">
                                 <div class="control">
                                     <label class="checkbox">
-                                        <input type="checkbox" required>
+                                        <input type="checkbox" name="terminos" value="aceptados"required>
                                         Acepto los <a href="https://pfsrealty.com/politicas-de-privacidad/" target="_blank">terminos y condiciones</a>
                                     </label>
                                 </div>

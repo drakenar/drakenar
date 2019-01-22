@@ -6,46 +6,30 @@ document.addEventListener('DOMContentLoaded',() => {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         return false;
-        console.log(form.elements);
-
-        for (let input in inputs) {
-            console.log(input.value);
-        }
-        /*Array.from(inputs).forEach((val, key) => {
-            console.log(vals);
-        });*/
-        /*xhttp.open("POST", "http://bdb9146b.ngrok.io/pfsservice", true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.setRequestHeader( 'referrer', 'cardseed');
-        xhttp.onreadystatechange = () => {
-            if (this.readyState == 4 && this.status == 200)
-                console.log(this.responseText);
-        }
-
-        xhttp.send("pfsform=abc");*/
-
-        let xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
-
-        xhr.addEventListener("readystatechange", () => {
-            if (this.readyState === 4) {
-                console.log(this.responseText);
-            }
-        });
-
-        xhr.open("GET", "https://cardseed.com/api/countries");
-        //xhr.open("GET", "http://b1dd9be5.ngrok.io/pfsservice?test=abc");
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.setRequestHeader("cache-control", "no-cache");
-        xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-
-        xhr.send();
     });
 
     send.addEventListener('click', () => {
         console.log(form.elements);
 
-        let xhr = new XMLHttpRequest();
+        let pfsForm = {};
+        for (let field of form.elements) {
+            if (field.type == 'text' || field.type == 'number' || field.type == 'number' || field.type == 'email' ||
+                field.type == 'textarea') {
+                pfsForm[field.name] = field.value;
+            } else if (field.type == 'radio') {
+                let radios = form.elements['viaje'];
+                console.log(radios);
+                for (let radio of radios) {
+                    if (radio.checked)
+                        pfsForm[radio.name] = radio.value;
+                }
+            }
+        }
+
+        let json = JSON.stringify(pfsForm);
+        window.open("http://54575a7c.ngrok.io/pfsservice?pfsform="+json, "_self");
+
+        /*let xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
 
         xhr.addEventListener("readystatechange", () => {
@@ -59,10 +43,10 @@ document.addEventListener('DOMContentLoaded',() => {
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.setRequestHeader("cache-control", "no-cache");
         /*xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://localhost:80');
-        xhr.setRequestHeader('Access-Control-Allow-Credentials', 'true');*/
+        xhr.setRequestHeader('Access-Control-Allow-Credentials', 'true');
         xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
 
-        xhr.send();
+        xhr.send();*/
         /*Array.from(form.elements).forEach((a, b) => {
             console.log(b.value);
         });
