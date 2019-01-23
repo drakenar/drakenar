@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded',() => {
         }
 
         let json = JSON.stringify(pfsForm);
-        window.open("http://bb8d8bc0.ngrok.io/pfsservice/?pfsform="+json, "_self");
+        window.open("http://36ff1b70.ngrok.io/pfsservice/?pfsform="+json, "_self");
 
         /*let xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
